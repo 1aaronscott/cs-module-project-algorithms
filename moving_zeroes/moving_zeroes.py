@@ -7,8 +7,8 @@ Returns: a List of integers
 def moving_zeroes(arr):
     # Your code here
     # for each item pop and append to list if it is 0
-    print("start list: ", arr)
-    print("list length: ", len(arr))
+    #    print("start list: ", arr)
+    #    print("list length: ", len(arr))
     # for i in range(len(arr)):
     #     print("loop value: ", i)
     #     print("current list: ", arr)
@@ -19,14 +19,18 @@ def moving_zeroes(arr):
     #         break
     i = 0
     while i < len(arr):
-        print("loop value: ", i)
-        print("current list: ", arr)
+        #        print("loop value: ", i)
+        #        print("current list: ", arr)
+        # end the loop when the remaining values are 0
         if max(arr[i:]) == 0 and min(arr[i:]) == 0:
             break
+        # if the current value is 0, move to end
+        # keep pointer at current position until it isn't 0 by not changing i
         if arr[i] == 0:
             arr.append(arr.pop(i))
-            print("a change was made: ", arr)
+#            print("a change was made: ", arr)
             continue
+        # current value is non-zero so move to the next
         i += 1
 
     return arr

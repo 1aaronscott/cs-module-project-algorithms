@@ -6,11 +6,16 @@ Returns: a List of integers
 
 def sliding_window_max(nums, k):
     # Your code here
+    # find length of list
     lsize = len(nums)
+    # deal with cases where list or window is small
     if lsize <= 1 or k <= 1:
         return nums
+    # storage list for the maxes
     maxes = []
+    # determine the number of possible windows given inputs
     windows = lsize-k+1
+    # loop through the input list windows finding the max of each
     i = 0
     while i < windows:
         maxes.append(max(nums[i:i+k]))

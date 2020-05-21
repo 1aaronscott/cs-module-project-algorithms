@@ -11,10 +11,13 @@ def product_of_all_other_numbers(arr):
 #    print("length of original list: ", len(arr))
 #    print(arr, "\n", arr[:-1])
     for i in range(len(arr)):
+        # product when at the start of list
         if i == 0:
             mult_list.append(math.prod(arr[1:]))
+        # product when at the end of list
         elif i == (len(arr)-1):
             mult_list.append(math.prod(arr[:-1]))
+        # product when in the middle of the list
         else:
             mult_list.append(math.prod(arr[:i]+arr[i+1:]))
     return mult_list
